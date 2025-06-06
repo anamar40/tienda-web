@@ -1,0 +1,38 @@
+[
+  {
+    "Nombre del Producto": "Smartwatch Inteligente",
+    "Imagen URL": "https://ejemplo.com/imagenes/smartwatch.jpg", 
+    "Enlace Amazon": "https://amzn.to/3xxxxxx", 
+    "Categoría": "Smartphones"
+  },
+  {
+    "Nombre del Producto": "Audífonos Inalámbricos",
+    "Imagen URL": "https://ejemplo.com/imagenes/audifonos.jpg", 
+    "Enlace Amazon": "https://amzn.to/3yyyyyy", 
+    "Categoría": "Audífonos"
+  },
+  {
+    "Nombre del Producto": "Teclado Mecánico RGB",
+    "Imagen URL": "https://ejemplo.com/imagenes/teclado.jpg", 
+    "Enlace Amazon": "https://amzn.to/3zzzzzz", 
+    "Categoría": "Accesorios"
+  },
+  {
+    "Nombre del Producto": "Mouse Inalámbrico",
+    "Imagen URL": "https://ejemplo.com/imagenes/mouse.jpg", 
+    "Enlace Amazon": "https://amzn.to/3aaaaaa", 
+    "Categoría": "Accesorios"
+  },
+  {
+    "Nombre del Producto": "Parlante Portátil",
+    "Imagen URL": "https://ejemplo.com/imagenes/parlante.jpg", 
+    "Enlace Amazon": "https://amzn.to/3bbbbb", 
+    "Categoría": "Accesorios"
+  },
+  {
+    "Nombre del Producto": "Cámara IP HD",
+    "Imagen URL": "https://ejemplo.com/imagenes/camara.jpg", 
+    "Enlace Amazon": "https://amzn.to/3cccccc", 
+    "Categoría": "Smartphones"
+  }
+]

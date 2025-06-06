@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tienda TechZone</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+    }
+
+    .store-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .store-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .store-header h1 {
+      font-size: 2.5em;
+      color: #00ffea;
+      margin: 0;
+    }
+
+    .store-header p {
+      font-size: 1.1em;
+      color: #cccccc;
+      margin-top: 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      background-color: #222222;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      max-height: 200px;
+    }
+
+    .product-card a {
+      display: block;
+      color: #00ffea;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 1.05em;
+    }
+
+    .product-card p {
+      font-size: 0.9em;
+      color: #bbbbbb;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="store-wrapper">
+
+  <!-- Encabezado -->
+  <div class="store-header">
+    <h1>Tienda TechZone</h1>
+    <p>Los mejores productos tecnológicos al mejor precio</p>
+  </div>
+
+  <!-- Productos -->
+  <div class="product-grid" id="product-grid">
+    <!-- Aquí aparecerán los productos dinámicamente -->
+  </div>
+
+</div>
+
+<script>
+  fetch('productos.json')
+    .then(res => res.json())
+    .then(products => {
+      const container = document.getElementById('product-grid');
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <a href="${product['Enlace Amazon']}" target="_blank">
+            <img src="${product['Imagen URL']}" alt="${product['Nombre del Producto']}">
+            <p>${product['Nombre del Producto']}</p>
+          </a>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error('Error al cargar productos:', err);
+      document.getElementById('product-grid').innerHTML = '<p>Error cargando productos. Asegúrate de que el archivo productos.json esté bien.</p>';
+    });
+</script>
+
+</body>
+</html>
